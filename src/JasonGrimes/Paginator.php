@@ -239,6 +239,14 @@ class Paginator
         return $pages;
     }
 
+    public function getAllPages()
+    {
+        $pages = array();
+        for ($i = 1; $i <= $this->numPages; $i++) {
+            $pages[] = $this->createPage($i, $i == $this->currentPage);
+        }
+        return $pages;
+    }
 
     /**
      * Create a page data structure.
